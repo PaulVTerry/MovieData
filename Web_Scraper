@@ -1,1 +1,8 @@
-#sahn
+from bs4 import BeautifulSoup
+import requests
+
+source = requests.get('https://www.imdb.com/name/nm0000217/?ref_=nv_sr_srsg_0').text
+
+soup = BeautifulSoup(source, 'lxml')
+
+print(soup.prettify())
